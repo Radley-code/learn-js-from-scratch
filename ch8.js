@@ -41,7 +41,7 @@ console.log("Type of", int_int, "is", typeof float_float);
 // array methods
 let arr = ["grapefruit", 4, "hello", 5.6, true];
 
-function printStuff(element, index){
+function printStuff(element, index) {
   console.log("Printing stuff:", element, "on array position:", index);
 }
 arr.forEach(printStuff); //Prints out all the elemnts and their index
@@ -49,7 +49,7 @@ arr.forEach(printStuff); //Prints out all the elemnts and their index
 //Filtering an array
 let arr2 = ["squirrel", 5, "Tjed", new Date(), true];
 
-function checkString(element, index){
+function checkString(element, index) {
   return typeof element === "string";
 }
 
@@ -58,24 +58,35 @@ console.log(filterArr);
 
 //Mapping the values of an array
 let arr3 = [1, 2, 3, 4];
-let mapped_arr = arr3.map(x => x + 1); //Add 1 to all the elements of the array
+let mapped_arr = arr3.map((x) => x + 1); //Add 1 to all the elements of the array
 console.log(mapped_arr); //Outputs the array values which has been increased by 1
 
 //Finding the last occerence in an array
-let bb = ["so", "bye", "bye","love"];
+let bb = ["so", "bye", "bye", "love"];
 console.log(bb.lastIndexOf("bye")); // Outputs the Index 2 holds the last bye variable
 
 //Practice Exercise 8.2
-let people = ["Laurence", "Laurence", "Laurence", "Laurence", "Mike" ,"Mike", "Mike", "Larry", "Kim", "Joanne"];
-let arr4 = people.filter ( (value, index, array) => {
-  console.log(value,index,array.indexOf(value));
+let people = [
+  "Laurence",
+  "Laurence",
+  "Laurence",
+  "Laurence",
+  "Mike",
+  "Mike",
+  "Mike",
+  "Larry",
+  "Kim",
+  "Joanne",
+];
+let arr4 = people.filter((value, index, array) => {
+  console.log(value, index, array.indexOf(value));
   return array.indexOf(value) === index;
 });
-console.log(arr4)
+console.log(arr4);
 
 //Practice Exercise 8.3
-let numbers = [89,5,4,3,42,1];
-let mapped_num = numbers.map(x => x*2);
+let numbers = [89, 5, 4, 3, 42, 1];
+let mapped_num = numbers.map((x) => x * 2);
 console.log(mapped_num);
 
 //String Methods
@@ -103,8 +114,8 @@ let index_re = poem.indexOf("re");
 console.log(index_re); //Outputs the first occurence of re is in are, and the re begins at index 7.
 
 let indexNotFound = poem.indexOf("python");
-console.log(indexNotFound); //outputs -1 bcs the dtring we are searching for doesnt occur in the target string
-if(poem.indexOf("python") != -1) {
+console.log(indexNotFound); //outputs -1 bcs the string we are searching for doesnt occur in the target string
+if (poem.indexOf("python") != -1) {
   //do stuff (check before dealing with the result)
 }
 
@@ -116,9 +127,9 @@ console.log(pos);
 //Creating substrings
 let str = "Create a substring";
 let substr1 = str.slice(5);
-let substr2 = str.slice(0,3);
+let substr2 = str.slice(0, 3);
 console.log("1:", substr1); //Outputs the value from index 5 and grabs the rest from there
- console.log("2:", substr2); //return from index 0 to 3 in the string
+console.log("2:", substr2); //return from index 0 to 3 in the string
 
 //  Replacing parts of the string
 let hi = "Hi buddy";
@@ -132,7 +143,7 @@ console.log(new_s3); //Only changing the first occerence by default
 
 let s4 = "hello hello";
 let new_s4 = s4.replaceAll("hello", "oh"); //This will replace all occurences with the specified string
-console.log(new_s4); 
+console.log(new_s4);
 
 // Uppercase And Lowercase
 let low_bye = "bye!";
@@ -143,7 +154,6 @@ let caps = "HI. HOW ARE YOU?!";
 let fixed_caps = caps.toLowerCase();
 console.log(fixed_caps);
 
-
 //Number Methods
 
 //Checking if something is (not) a number
@@ -152,3 +162,100 @@ console.log(isNaN(num));
 console.log(!isNaN(num));
 let str01 = "hi";
 console.log(isNaN(str01));
+
+//Specifying a number of decimals
+
+let dec = 1.23456;
+let newdec = dec.toFixed(3); // TO 3 DECIMAL PLACES
+let newdec2 = dec.toPrecision(4); // precise the total numbers of numbers
+console.log(dec, newdec);
+console.log(dec, newdec2);
+
+//Math Methods
+
+//Find highest Number
+let highest = Math.max(
+  2,
+  3,
+  4,
+  1,
+  6,
+  7,
+  8,
+  76,
+  5,
+  4,
+  2,
+  1,
+  5,
+  56,
+  754,
+  3,
+  635,
+  2,
+  2,
+  2
+); //Max number
+console.log(highest);
+
+//Lowest Number
+let lowest = Math.min(2, 3, 4, 5, 1, 4, 5, 0, 54, 3);
+console.log(lowest);
+//If text is the list of number. JavaScript ignores it
+
+//Square Root And Raising to the power of
+let rlt = Math.sqrt(64); //Square Root
+console.log(rlt);
+let rlt2 = Math.pow(5, 3); //5 to the power 3
+console.log(rlt2);
+
+// Turning decimals into Integers
+let a = 6.78;
+let b = 4.38;
+console.log("a:", a, "becomes", Math.round(a));
+console.log("b:", b, "becomes", Math.round(b));
+
+//Celi
+console.log("a:", a, "becomes", Math.ceil(a));
+console.log("b:", b, "becomes", Math.ceil(b));
+
+//turning to negative numbers
+let negetiveA = -a;
+let negetiveB = -b;
+console.log("negativeA:", negetiveA, "becomes", Math.ceil(negetiveA));
+console.log("negativeB:", negetiveB, "becomes", Math.ceil(negetiveB));
+// Because -4 is higher than -6. Ceil() method is always rounding up to the first integer it encounters
+
+//Floor
+console.log("a", a, "becomes", Math.floor(a)); //Rounds up to the nearest integer number
+console.log("negativeA:", negetiveA, "becomes", Math.floor(negetiveA));
+
+//trunc() exactly same as floor for positive numbers, but it  gets to tese differently(not rounding down simply returns the integer part)
+console.log("a:", x, "becomes", Math.trunc(a));
+
+//Exponent And Logarithm
+let z = 2;
+let exp = Math.exp(z);
+console.log(exp);
+let log = Math.log(z);
+console.log(log);
+
+//Practice Exercise 8.6
+let f = 5.7;
+console.log(Math.ceil(f));
+console.log(Math.floor(f));
+console.log(Math.round(f));
+
+console.log(Math.random());
+console.log(Math.floor(Math.random() * 10)); // 0-10
+console.log(Math.floor(Math.random() * 10) + 1); // 1-10
+console.log(Math.floor(Math.random() * 100) + 1); // 1-100
+
+function ranNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+for (let x = 0; x < 100; x++) {
+  console.log(ranNum(1, 100));
+}
+
+//Date Methods
