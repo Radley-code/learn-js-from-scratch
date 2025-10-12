@@ -259,3 +259,92 @@ for (let x = 0; x < 100; x++) {
 }
 
 //Date Methods
+//Creating dates
+let currentdateTime = new Date();
+console.log(currentdateTime); //logs current time and date
+//using built-in method, now()
+let now2 = Date.now();
+console.log(now2); // the current time, represented in seconds since January 1 1970.
+//An arbitary date representing the Unix epoch
+
+let milliDate = new Date(1000);
+console.log(milliDate); //adding 1000 milliseconds to the unix epoch time
+
+//Convert many string formulas to a date
+let stringDate = new Date("Sat Jun 05 2021 12:40:12 GMT+0200");
+console.log(stringDate); // output may vary depending on the region
+
+//You can also specify a certian date using the constructor
+let specificDate = new Date(2022, 1, 10, 12, 10, 15, 100);
+console.log(specificDate); //second parameter is the month. 0 is for January and 11 is for December
+
+//Methods to get and set the elements of a date
+let d = new Date();
+console.log("Day Of week:", d.getDay());
+console.log("Day of month:", d.getMonth());
+console.log("Month:", d.getMonth());
+console.log("Year:", d.getFullYear());
+console.log("seconds:", d.getSeconds());
+console.log("Milliseconds:", d.getMilliseconds());
+console.log("Time:", d.getTime()); // time is so high because it's the number of milliseconds since Janaury 1 1970
+
+d.setFullYear(2010); //changing the year to 2010
+console.log(d);
+// You can search more on date methods
+
+//Parsing Dates
+let d1 = Date.parse("June 5, 2021");
+console.log(d1); //Many zeros bcs no time or milliseconds arre specified in our string
+
+let d2 = Date.parse("6/5/2021");
+console.log(d2); //same example differently
+
+//Converting a date to a string
+console.log(d.toDateString()); //Dates back to strings
+//Another Method that convert differently
+console.log(d.toLocaleDateString());
+
+//Practice Exercise 8.7
+let future = new Date(2027, 10, 27);
+console.log(future);
+const months = [
+  "January",
+  "Febuary",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let day = future.getDay();
+let year = future.getFullYear();
+let month = future.getMonth();
+let date = `${months[month - 1]} ${day} ${year}}`;
+console.log(date);
+
+//Chapter Project
+//Word Scrambler
+let Name = "RadleyCode";
+function scramble(val) {
+  let max = val.length;
+  let temp = "";
+  for(let i=0;i<max;i++) {
+    console.log(val.length);
+    let index = Math.floor(Math.random() * val.length);
+    temp += val[index];
+    console.log(temp);
+    val = val.substr(0, index) + val.substr(index + 1);
+    console.log(val);
+  }
+  return temp;
+}
+
+console.log(scramble(Name));
+
+ let str2 = "JavaScript";
+ console.log(scramble(str2))  
