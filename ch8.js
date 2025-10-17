@@ -347,4 +347,36 @@ function scramble(val) {
 console.log(scramble(Name));
 
  let str2 = "JavaScript";
- console.log(scramble(str2))  
+ console.log(scramble(str2));
+
+
+ const endDate = "Sept 1 2022";
+ 
+ function countdown() {
+  const total = Date.parse(endDate) - new Date() //Parse the date and subtract the current date from that end
+  //getting total milliseconds
+  const days1 = Math.floor(total / (1000 * 60 * 60 * 24));
+  const hrs = Math.floor(total / (1000 * 60 * 60 * 24)) % 24;
+  const mins = Math.floor((total / 1000 / 60) % 60);
+  const secs = Math.floor((total / 1000) % 60);
+
+  return {
+    days1,
+    hrs,
+    mins,
+    secs
+  };
+}
+
+function update() {
+  const temp = countdown();
+  let output = "";
+  for(const property in temp) {
+    output += (`${property}: ${temp[property]}`);
+  }
+
+  console.log(output);
+  setTimeout(update, 1000);
+}
+
+// update(); uncomment this code start a timer
