@@ -350,7 +350,7 @@ console.log(scramble(Name));
  console.log(scramble(str2));
 
 
- const endDate = "Sept 1 2022";
+ const endDate = "Oct 30 2027";
  
  function countdown() {
   const total = Date.parse(endDate) - new Date() //Parse the date and subtract the current date from that end
