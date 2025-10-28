@@ -50,3 +50,30 @@ function stop() {
   alert("Ouch! Stop it!");
 } //defining the alert function which triggers wen the div is clicked
 
+//This and the DOM
+//in html
+
+//Practice Exercise 10.7
+
+
+
+//Manupulating element style
+//let's make the hello worlds disappear
+function toggledisplay(){
+
+
+const p = document.getElementById("magic");
+if(p.style.display === "none") {
+  p.style.display = "block";
+}else{
+  p.style.display = "none";
+}
+} // now this function will change the style display of the p element to none
+
+//Make a rainbow
+function rainbowify() {
+  let divs = document.getElementsByClassName("rainbow-div");
+  for(let i=0; i<divs.length; i++){
+    divs[i].style.backgroundColor = divs[i].id;
+  }
+}

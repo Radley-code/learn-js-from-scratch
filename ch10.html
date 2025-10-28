@@ -6,6 +6,24 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- Rainbow Divs -->
+    <style>
+      .rainbow-div {
+        height: 30px;
+        width: 30px;
+        background-color: white;
+      }
+    </style>
+
+    <div class="rainbow-div" id="red"></div>
+    <div class="rainbow-div" id="orange"></div>
+    <div class="rainbow-div" id="green"></div>
+    <div class="rainbow-div" id="blue"></div>
+    <div class="rainbow-div" id="indigo"></div>
+    <div class="rainbow-div" id="violet"></div>
+    <div class="rainbow-div" id="yelllow"></div>
+
+    <button onclick="rainbowify()">Make me a rainbow</button>
     <h1>Let's find the treasure</h1>
     <div id="forest">
       <div id="tree1">
@@ -37,6 +55,17 @@
 
     <div id="click" onclick="stop()">Don't Click here!</div>
     <!--Set an alert from the js file function stop() -->
+
+    <!-- This DOM -->
+    <script>
+      function reveal(el) {
+        console.log(el.parentElement); //logs the element it is in, the button element
+      }
+    </script>
+    <button class="btn" onclick="reveal(this)">Click This</button>
+    <p id="magic">Hello World, I might disappear and appear</p>
+    <button onclick="toggledisplay()">Magic!</button>
+
     <script src="./ch10.js"></script>
   </body>
 </html>
