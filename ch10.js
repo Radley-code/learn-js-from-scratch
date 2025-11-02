@@ -77,3 +77,5 @@ function rainbowify() {
     divs[i].style.backgroundColor = divs[i].id;
   }
 }
+
+//Changing the classes of an element

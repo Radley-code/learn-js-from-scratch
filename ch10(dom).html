@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- this html contains js and css to carry dom  -->
+<html>
+
+<script>
+    function disappear() {
+        document.getElementById("shape").classList.add("hide"); //when called this will and the hide class to the shape element
+    }
+
+    function change() {
+        document.getElementById("shape").classList.remove("blue"); //Remove the blue class from the shape element making .square its only class
+    }
+
+    function changeVisibility() {
+       document.getElementById("shape").classList.toggle("hide")  // when called this will add the class when its not there and remove wen it there
+    }
+
+</script>
+
+<style>
+    .hide {
+        display: none;  /*hides the element with this class */
+    }
+
+    .square {
+        height: 100px;
+        width: 100px;
+        background-color: yellow;
+    }
+
+    .square.blue {
+       background-color:   blue; /*Overwrite the yellow colour to blue  */
+    }
+
+</style>
+<div id="shape" class="square blue"></div>
+
+<button onclick="disappear()">Disappear</button>
+<button onclick="change()">Change</button> 
+<button onclick="changeVisibility()">Magic!</button>
+
+</html>
