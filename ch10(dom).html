@@ -15,9 +15,27 @@
        document.getElementById("shape").classList.toggle("hide")  // when called this will add the class when its not there and remove wen it there
     }
 
+    function changeAttr() {
+        let el = document.getElementById("shape");
+        el.setAttribute("style", "background-color:red;border:1px solid black");
+        el.setAttribute("id", "new");
+        el.setAttribute("class", "circle");
+    }
+
 </script>
 
 <style>
+
+    /* div{
+        height: 100px;
+        width: 100px;
+        background-color: yellow;
+    } */
+
+    .circle{
+        border-radius: 50%;
+    }
+
     .hide {
         display: none;  /*hides the element with this class */
     }
@@ -33,10 +51,46 @@
     }
 
 </style>
+<div id="shape" class="square"></div>
 <div id="shape" class="square blue"></div>
 
 <button onclick="disappear()">Disappear</button>
 <button onclick="change()">Change</button> 
 <button onclick="changeVisibility()">Magic!</button>
+<button onclick="changeAttr()">Change attributes...</button>
+
+<!-- Practice Exercise 10.8 -->
+ <h1>Complete JavScript Course</h1>
+
+ <div id="message"></div>
+ <div id="output"></div>
+
+ <script>
+  const message = document.querySelector("#message");
+  const myArray = ["Radley", "Acha", "Mary", "John"];
+  build();
+
+  function build() {
+    let html = "<h1>My Friends Table<h1>";
+        myArray.forEach((item, index) => {
+           html += `<tr class="box" data-row="${index+1}"
+           data-name="${item}" onclick="getData(this)">
+           <td> ${index}</td>`;
+            
+           html += `<td >${index + 1}</td></tr>`;
+        });
+           html += "</table>";
+           document.getElementById("output").innerHTML = html; 
+  }
+
+  function getData(el) {
+    let temp = el.getAttribute("data-row");
+    let tempName = el.getAttribute("data-name");
+
+    message.innerHTML = `${tempName} is in row #${temp}`;
+  }
+
+
+ </script>
 
 </html>
