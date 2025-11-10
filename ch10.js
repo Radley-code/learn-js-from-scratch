@@ -79,3 +79,22 @@ function rainbowify() {
 }
 
 //Changing the classes of an element
+//Adding classes to elements
+ function disappear() {
+  document.getElementById("shape").classList.add("hide");
+ } //this function get the element with id "shape" and hides it.
+ function appear() {
+  document.getElementById("shape").classList.remove("blue");
+ } // this function will now remove the blue property of the class.
+  function change() {
+  document.getElementById("shape").classList.toggle("hide");
+ } //this function toggle the hide that will hide on first click when called and appears in second click.
+
+
+// Creating new elements
+function addRandomNumber() {
+  let el = document.createElement("p");
+  el.innerText = Math.floor(Math.random()*100);
+  document.body.appendChild(el);
+} //This function create parapraph and gets a random number then add it to that paragraph
+
