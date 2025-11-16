@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            display: block !important;
+        }
+        .myText {
+            display: none;
+        }
+        .title {
+            font-size: 1.5rem;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<!-- this html contains two different projects -->
+
+    <!-- start of project on the collapsible accordion component -->
+    <div class="container">
+        <div class="title">Title #1</div>
+        <div class="myText">Just some text #1</div>
+        <div class="title">Title #2</div>
+        <div class="myText">Just some text #2</div>
+        <div class="title">Title #3</div>
+        <div class="myText">Just some text #3</div>
+    </div>
+    <!-- end -->
+    <script>
+        // start of project on the collapsible accordion component 
+        let title = document.querySelectorAll(".title");  //selecting all elements with title class
+        let myText = document.querySelectorAll(".myText"); //selecting all elements with myText class
+        title.forEach((el) => {
+            el.addEventListener("click", (e) => { //add event listener
+                console.log(el.nextElementSibling);
+            remover(); //invoke function
+            el.nextElementSibling.classList.toggle("active"); //toggles the classlist of the element with the class of active
+            }) // iterate through all the title elements
+           
+        }
+    )
+    function remover() {
+        myText.forEach((ele) => {
+            ele.classList.remove("active");
+        }) //remove the class of active from all the elements. this will hide all the elements
+    }
+    //end...
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="message">Complete Javascript Course</div>
+    <div>
+        <input type="text" name="item" id="additem">
+       <input type="button" id="addNew" onclick="addOne()" value="Add to List">   <!--add an event listener to the button -->
+    </div>
+
+    <div id="output">
+        <h1>Shopping Lists</h1>
+        <ol id="sList"> </ol>
+    </div>
+
+    <script>
+        function addOne(){
+           var a = document.getElementById("additem").value; //value of the input with id=additem
+            let li = document.createElement("li"); //creates a li element
+            li.appendChild(document.createTextNode(a)); 
+            document.getElementById("sList").appendChild(li); //adds the li to the ol element with id=sList
+        } //called this function in the button
+    </script>
+</body>
+</html>
